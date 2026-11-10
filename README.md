@@ -11,7 +11,7 @@ herdr app restores your spaces, tabs and terminals after a reboot, but by design
 In PowerShell:
 
 ```powershell
-irm https://raw.githubusercontent.com/__OWNER__/herdr-resume-windows/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/aramillo/herdr-resume-windows/main/install.ps1 | iex
 ```
 
 Then restart the Claude sessions you have open (or start new ones) so they register. That's it.
@@ -49,7 +49,7 @@ If your execution policy blocks profiles, the installer sets `RemoteSigned` for 
 ## Uninstall
 
 ```powershell
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/__OWNER__/herdr-resume-windows/main/install.ps1))) -Uninstall
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/aramillo/herdr-resume-windows/main/install.ps1))) -Uninstall
 ```
 
 or, from a clone, `.\install.ps1 -Uninstall`. It removes the hooks, the profile blocks and the folder.
@@ -69,7 +69,7 @@ or, from a clone, `.\install.ps1 -Uninstall`. It removes the hooks, the profile 
 
 Complemento para **herdr app en Windows** que vuelve a abrir tus conversaciones de **Claude Code** en sus pestañas después de reiniciar la PC.
 
-- **Instalar:** `irm https://raw.githubusercontent.com/__OWNER__/herdr-resume-windows/main/install.ps1 | iex` y luego reinicia las sesiones de Claude que tengas abiertas.
+- **Instalar:** `irm https://raw.githubusercontent.com/aramillo/herdr-resume-windows/main/install.ps1 | iex` y luego reinicia las sesiones de Claude que tengas abiertas.
 - **Al reiniciar:** cada pestaña que tenía una conversación muestra `resuming Claude session ... (Esc to cancel)` y a los 3 segundos ejecuta `claude --resume <id>` en su carpeta. Pulsa **Esc** para saltarla.
 - **Si sales con `/exit` o Ctrl+C**, esa conversación no se retoma.
 - **Desinstalar:** `& ([scriptblock]::Create((irm .../install.ps1))) -Uninstall`.

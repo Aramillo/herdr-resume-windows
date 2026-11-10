@@ -1,9 +1,9 @@
 # herdr-resume-windows installer.
 #
 # Install (one line, PowerShell):
-#   irm https://raw.githubusercontent.com/__OWNER__/herdr-resume-windows/main/install.ps1 | iex
+#   irm https://raw.githubusercontent.com/aramillo/herdr-resume-windows/main/install.ps1 | iex
 # Uninstall:
-#   & ([scriptblock]::Create((irm https://raw.githubusercontent.com/__OWNER__/herdr-resume-windows/main/install.ps1))) -Uninstall
+#   & ([scriptblock]::Create((irm https://raw.githubusercontent.com/aramillo/herdr-resume-windows/main/install.ps1))) -Uninstall
 # From a clone:
 #   .\install.ps1            /   .\install.ps1 -Uninstall
 #
@@ -16,7 +16,7 @@ param([switch]$Uninstall)
 
 $ErrorActionPreference = 'Stop'
 
-$RepoRaw  = 'https://raw.githubusercontent.com/__OWNER__/herdr-resume-windows/main'
+$RepoRaw  = 'https://raw.githubusercontent.com/aramillo/herdr-resume-windows/main'
 $Dir      = Join-Path $env:LOCALAPPDATA 'herdr-resume'
 $Settings = Join-Path $env:USERPROFILE '.claude\settings.json'
 $Docs     = [Environment]::GetFolderPath('MyDocuments')
