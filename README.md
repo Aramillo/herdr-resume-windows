@@ -8,10 +8,16 @@ herdr app restores your spaces, tabs and terminals after a reboot, but by design
 
 ## Install
 
-In PowerShell:
+In a **PowerShell** window (not cmd, not Git Bash):
 
 ```powershell
 irm https://raw.githubusercontent.com/aramillo/herdr-resume-windows/main/install.ps1 | iex
+```
+
+From any other shell (cmd, Git Bash, or Claude Code's `!` prompt, which may run bash):
+
+```
+powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/aramillo/herdr-resume-windows/main/install.ps1 | iex"
 ```
 
 Then restart the Claude sessions you have open (or start new ones) so they register. That's it.
@@ -69,7 +75,7 @@ or, from a clone, `.\install.ps1 -Uninstall`. It removes the hooks, the profile 
 
 Complemento para **herdr app en Windows** que vuelve a abrir tus conversaciones de **Claude Code** en sus pestañas después de reiniciar la PC.
 
-- **Instalar:** `irm https://raw.githubusercontent.com/aramillo/herdr-resume-windows/main/install.ps1 | iex` y luego reinicia las sesiones de Claude que tengas abiertas.
+- **Instalar:** en una ventana de **PowerShell** (no cmd ni Git Bash) ejecuta `irm https://raw.githubusercontent.com/aramillo/herdr-resume-windows/main/install.ps1 | iex`. Desde cmd, Git Bash o el `!` de Claude Code usa la versión `powershell -NoProfile -ExecutionPolicy Bypass -Command "..."` de arriba. Luego reinicia las sesiones de Claude que tengas abiertas.
 - **Al reiniciar:** cada pestaña que tenía una conversación muestra `resuming Claude session ... (Esc to cancel)` y a los 3 segundos ejecuta `claude --resume <id>` en su carpeta. Pulsa **Esc** para saltarla.
 - **Si sales con `/exit` o Ctrl+C**, esa conversación no se retoma.
 - **Desinstalar:** `& ([scriptblock]::Create((irm .../install.ps1))) -Uninstall`.
